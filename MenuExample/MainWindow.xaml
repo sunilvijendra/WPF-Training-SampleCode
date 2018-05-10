@@ -1,0 +1,123 @@
+﻿<Window x:Class="MenuExample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MenuExample"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+
+        <Grid Name="grid" ShowGridLines ="false" Background ="White" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="250"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Margin="10, 10, 5, 5" Grid.Column="0" Grid.Row="0" FontSize="24">Menus</TextBlock>
+            <TextBlock Margin="10, 10, 5, 5" Grid.Column="0" Grid.Row="1" FontSize="14" Grid.ColumnSpan="2">The following menu examples demonstrate:</TextBlock>
+            <DockPanel Grid.Column="0" Grid.Row="2">
+                <Menu Background="Gray" Width="30"  Margin="10, 10, 5, 5" HorizontalAlignment="Left">
+                    <MenuItem Header="File">
+                        <MenuItem Header="New"/>
+                        <MenuItem Header="Open"/>
+                       
+                        <MenuItem Header="submenu">
+                            <MenuItem Header="submenuitem1"/>
+                            <MenuItem Header="submenuitem2">
+                                <MenuItem Header="submenuitem2.1"/>
+                            </MenuItem>
+                        </MenuItem>
+                    </MenuItem>
+                </Menu>
+            </DockPanel>
+            <TextBlock Margin="5, 10, 5, 5" Grid.Column="1" Grid.Row="2" FontSize="12" VerticalAlignment="Center">Simple menu with submenu items.</TextBlock>
+            <DockPanel Grid.Column="0" Grid.Row="3">
+                <Menu Background="Pink" Width="30" Margin="10, 10, 5, 5" HorizontalAlignment="Left">
+                    <MenuItem Header="Edit">
+                        <MenuItem Header="Cut"/>
+                        <MenuItem Header="Copy"/>
+                        <MenuItem Header="Paste"/>
+                      
+                        <MenuItem Header="Menu item with ToolTip">
+                            <MenuItem.ToolTip>
+                                <ToolTip>
+                                    Some information.
+                                </ToolTip>
+                            </MenuItem.ToolTip>
+                        </MenuItem>
+                    </MenuItem>
+                </Menu>
+            </DockPanel>
+
+            <TextBlock Margin="10, 10, 5, 5" Grid.Column="1" Grid.Row="3" FontSize="12" VerticalAlignment="Center" TextWrapping="Wrap">Menu item with ToolTip.</TextBlock>
+            <DockPanel Grid.Column="0" Grid.Row="4">
+                <Menu Background="Red" Width="50" Height="25" Margin="10, 10, 5, 5" HorizontalAlignment="Left">
+                    <MenuItem>
+                        <MenuItem.Header>
+                            <TextBlock>
+            <AccessText>P</AccessText>roject
+                            </TextBlock>
+                        </MenuItem.Header>
+                        <MenuItem>
+                            <MenuItem.Header>
+                                <TextBlock><AccessText>A</AccessText>dd</TextBlock>
+                            </MenuItem.Header>
+                        </MenuItem>
+                        <MenuItem>
+                            <MenuItem.Header>
+                                <TextBlock><AccessText>D</AccessText>elete</TextBlock>
+                            </MenuItem.Header>
+                        </MenuItem>
+                        
+                        <MenuItem Header="Recent Files"/>
+                    </MenuItem>
+
+                </Menu>
+            </DockPanel>
+
+            <TextBlock Margin="10, 10, 5, 5" Grid.Column="1" Grid.Row="4" FontSize="12" VerticalAlignment="Center" TextWrapping="Wrap">Menu Item with AccessText. Hover over the menu and press the ALT key to see the AccessText underlined.</TextBlock>
+            <DockPanel Grid.Column="0" Grid.Row="5">
+                <Menu Background="LightGreen" Width="50"  Margin="10, 10, 5, 5" HorizontalAlignment="Left">
+                    <MenuItem Header="Animals">
+                        <MenuItem>
+                            <MenuItem.Header>
+                                <Image Source="\images\cat.png"/>
+                            </MenuItem.Header>
+                        </MenuItem>
+                        <MenuItem>
+                            <MenuItem.Header>
+                                <Image Source="\images\dog.png"/>
+                            </MenuItem.Header>
+                        </MenuItem>
+                        <MenuItem>
+                            <MenuItem.Header>
+                                <Image Source="\images\fish.png"/>
+                            </MenuItem.Header>
+                        </MenuItem>
+                    </MenuItem>
+                </Menu>
+            </DockPanel>
+            <TextBlock Margin="10, 10, 5, 5" Grid.Column="1" Grid.Row="5" FontSize="12" VerticalAlignment="Center" TextWrapping="Wrap">Image used as a menu item.</TextBlock>
+            <Button Margin="5, 10, 5, 5" Grid.Column="0" Grid.Row="6" Click="Button_Click">Click me to create a menu with C# code.</Button>
+            <TextBlock Margin="10, 10, 5, 5" Grid.Column="1" Grid.Row="6" FontSize="12" VerticalAlignment="Center" TextWrapping="Wrap">Creating a menu with C#.</TextBlock>
+        </Grid>
+
+
+
+
+
+</Window>

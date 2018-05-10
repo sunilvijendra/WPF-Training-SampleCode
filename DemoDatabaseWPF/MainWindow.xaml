@@ -1,0 +1,19 @@
+﻿<Window x:Class="DemoDatabaseWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DemoDatabaseWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="351.211" Width="865.311">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="20*"/>
+        </Grid.RowDefinitions>
+        <ComboBox Name="cmbProductList" HorizontalAlignment="Left" Margin="110,14,0,0" VerticalAlignment="Top" Width="155" RenderTransformOrigin="0.236,-0.389" ItemsSource="{Binding Path=ProductNames}" SelectionChanged="cmbProductList_SelectionChanged"/>
+        <Label Content="Product" HorizontalAlignment="Left" Margin="44,10,0,0" VerticalAlignment="Top"/>
+        <DataGrid Name="dgOrders" HorizontalAlignment="Left" Height="223" Margin="44,56,0,0" VerticalAlignment="Top" Width="776" Grid.RowSpan="2" />
+
+    </Grid>
+</Window>
