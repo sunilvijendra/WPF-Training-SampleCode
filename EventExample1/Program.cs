@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace EventExample1
-    {
+{
         class Program
         {
             static void Main(string[] args)
@@ -59,4 +59,4 @@ namespace EventExample1
             public event EventHandler ThresholdReached;
         }
     }
-}
+

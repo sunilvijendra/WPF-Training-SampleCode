@@ -43,6 +43,7 @@ namespace DemoDatabaseWPF
             myData.CurrentProductId = prodList.First(x => x.name == selName).id;
 
             dgOrders.ItemsSource = myData.OrderList;
+           
         }
     }
 

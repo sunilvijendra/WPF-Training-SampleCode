@@ -1,0 +1,38 @@
+﻿<Window x:Class="LayoutSampleDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LayoutSampleDemo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+
+    <Window.Resources>
+        <local:MyProducts x:Key="MyProductList"></local:MyProducts>
+    </Window.Resources>
+    
+    <Grid>
+        <ComboBox Name="cmbProducts" Margin="156,29,109,258" ItemsSource="{Binding Source={StaticResource MyProductList}, Path=CategoryAndProducts}">
+            <ComboBox.Resources>
+                <local:ProductCategoryConverter x:Key="categoryConverter"></local:ProductCategoryConverter>
+            </ComboBox.Resources>
+            
+            <ComboBox.ItemContainerStyle>
+                <Style TargetType="ComboBoxItem">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Path=Content,
+                                                       RelativeSource={RelativeSource Self},
+                                                       Converter={StaticResource categoryConverter}, 
+                                                       ConverterParameter={StaticResource MyProductList}}"
+                                     Value="true">
+                            <Setter Property="FontWeight" Value="Bold"></Setter>
+                            <Setter Property="IsEnabled" Value="False"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </ComboBox.ItemContainerStyle>
+            
+        </ComboBox>
+        <Label Content="Select Product" HorizontalAlignment="Left" Margin="44,29,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

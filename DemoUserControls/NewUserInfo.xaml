@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="DemoUserControls.NewUserInfo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DemoUserControls"
+             mc:Ignorable="d" Height="84.083" Width="555.363">
+    <Grid>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="19,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content=" First Name&#xD;&#xA;" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="27" Width="74"/>
+        <Label Content="Last Name&#xD;&#xA;" HorizontalAlignment="Left" Margin="153,11,0,0" VerticalAlignment="Top" Height="26"/>
+        <GroupBox Header="Employee Status" HorizontalAlignment="Left" Height="55" Margin="292,13,0,0" VerticalAlignment="Top" Width="253">
+            <Grid>
+                <RadioButton Content="Current" Margin="27,10,134,5"/>
+                <RadioButton Content="Ex-Employee" Margin="132,10,10,0"/>
+            </Grid>
+        </GroupBox>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="157,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+
+    </Grid>
+</UserControl>

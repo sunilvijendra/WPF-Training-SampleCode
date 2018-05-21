@@ -6,12 +6,27 @@
         xmlns:local="clr-namespace:DemoDataBinding"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        <Label Content="Product Name" HorizontalAlignment="Left" Margin="61,49,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="txtProductName" HorizontalAlignment="Left" Height="23" Margin="170,52,0,0" TextWrapping="Wrap" Text="{Binding Name}" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Product Desc" HorizontalAlignment="Left" Margin="67,109,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.126,0.499"/>
-        <TextBox Name="txtProductDesc" HorizontalAlignment="Left" Height="23" Margin="170,113,0,0" TextWrapping="Wrap" Text="{Binding Description}" VerticalAlignment="Top" Width="120"/>
-        <Button Click="btnChange_Click" Name="btnChange" Content="Button" HorizontalAlignment="Left" Margin="181,201,0,0" VerticalAlignment="Top" Width="75"/>
 
+    <Window.Resources>
+        <DataTemplate x:Key="ProductInfoTemplate">
+            <StackPanel>
+            <Grid>
+                <Label Content="Product Name" HorizontalAlignment="Left" Margin="61,49,0,0" VerticalAlignment="Top"/>
+                <TextBox Name="txtProductName" HorizontalAlignment="Left" Height="23" Margin="170,52,0,0" TextWrapping="Wrap" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Product Desc" HorizontalAlignment="Left" Margin="67,77,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.126,0.499"/>
+                <TextBox Name="txtProductDesc" HorizontalAlignment="Left" Height="23" Margin="170,80,0,0" TextWrapping="Wrap" Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.518,-0.505"/>
+            </Grid>
+            <Button Content="OK"></Button>
+            </StackPanel>
+        </DataTemplate>
+        
+    </Window.Resources>
+    <Grid>
+        <Grid.Resources>
+            
+        </Grid.Resources>
+        <ListBox ItemsSource="{Binding}" ItemTemplate="{StaticResource ProductInfoTemplate}">
+        </ListBox>
+        <!-- Button Click="btnChange_Click" Name="btnChange" Content="B_utton" HorizontalAlignment="Left" Margin="181,201,0,0" VerticalAlignment="Top" Width="75"/-->
     </Grid>
 </Window>

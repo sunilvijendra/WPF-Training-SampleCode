@@ -22,14 +22,17 @@ namespace DemoDataBinding
     public partial class MainWindow : Window
     {
         Product prod = null;
+        List<Product> prodLst = new List<Product>();
 
         public MainWindow()
         {
             InitializeComponent();
 
             prod  = new Product("Bottle", "Holds water, oil and etc.");
-
-            this.DataContext = prod;
+            prodLst.Add(prod);
+            prodLst.Add(new Product("Pen","To write" ));
+            prodLst.Add(new Product("Pencil", "To sketch"));
+            this.DataContext = prodLst;
         }
 
         private void btnChange_Click(object sender, RoutedEventArgs e)

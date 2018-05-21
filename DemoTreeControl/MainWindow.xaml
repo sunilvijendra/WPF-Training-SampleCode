@@ -1,0 +1,30 @@
+﻿<Window x:Class="DemoTreeControl.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DemoTreeControl"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <TreeView HorizontalAlignment="Left" Height="259" Margin="43,26,0,0" VerticalAlignment="Top" Width="311">
+            <TreeViewItem Header="Folder1">
+                <TreeViewItem Header="File1"></TreeViewItem>
+                <TreeViewItem Header="File2"></TreeViewItem>
+                <TreeViewItem Header="File3"></TreeViewItem>
+            </TreeViewItem>
+            <TreeViewItem Header="Folder2">
+                <TreeViewItem Header="File4"></TreeViewItem>
+                <TreeViewItem Header="File5"></TreeViewItem>
+                <TreeViewItem Header="File6"></TreeViewItem>
+            </TreeViewItem>
+            <TreeViewItem Header="Folder3">
+                <TreeViewItem Header="File7"></TreeViewItem>
+                <TreeViewItem Header="File8"></TreeViewItem>
+                <TreeViewItem Header="File9"></TreeViewItem>
+            </TreeViewItem>
+            <TreeViewItem Header="File10"></TreeViewItem>
+        </TreeView>
+
+    </Grid>
+</Window>

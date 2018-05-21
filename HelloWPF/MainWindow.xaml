@@ -7,15 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="100" Width="250">
     <Grid>
-        <Button  Click="Button_Click" Margin="33,22,72,15" RenderTransformOrigin="0.5,0.5">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0.171"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Button.RenderTransform> Click Me!
+        <Button  Click="Button_Click" Height="50" Width="100" >
+            <StackPanel>
+                <Label>First Line</Label>
+                <TextBox Text="Hello"></TextBox>
+                <Image></Image>
+            </StackPanel>
+
         </Button>
     </Grid>
 </Window>
