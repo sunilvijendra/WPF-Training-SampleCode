@@ -9,26 +9,19 @@ namespace LayoutSampleDemo
 {
     public class MyProducts
     {
-        Dictionary<string, List<string>> productList = null;
+        Dictionary<string, List<string>> lst = null;
         public MyProducts()
         {
-            productList = new Dictionary<string, List<string>>();
+            lst = new Dictionary<string, List<string>>();
 
-            productList.Add("Mobiles", new List<string> {"iPhoneX", "Samsung S9", "OnePlus 6", "Redmi 5" });
-            productList.Add("Television", new List<string> { "Sony 65 inch", "Samsung 59 inch", "Panasonic 60 inch" });
+            lst.Add("Mobiles", new List<string> {"iPhoneX", "Samsung S9", "OnePlus 6", "Redmi 5" });
+            lst.Add("Television", new List<string> { "Sony 65 inch", "Samsung 59 inch", "Panasonic 60 inch" });
         }
 
-       
         public Dictionary<string, List<string>> ProductList
         {
-            get
-            {
-                return productList;
-            }
-            set
-            {
-                productList = value;
-            }
+            get { return lst; }
+            set { lst = value;}
         }
 
         public List<String> CategoryAndProducts
@@ -36,10 +29,10 @@ namespace LayoutSampleDemo
             get {
 
                 List<string> catAndProds = new List<string>();
-                foreach (string cat in productList.Keys)
+                foreach (string cat in lst.Keys)
                 {
                     catAndProds.Add(cat);
-                    catAndProds.AddRange(productList[cat]);
+                    catAndProds.AddRange(lst[cat]);
                 }
 
                 return catAndProds;
