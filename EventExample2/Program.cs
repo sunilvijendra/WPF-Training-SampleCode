@@ -11,7 +11,7 @@ namespace EventExample2
         static void Main(string[] args)
         {
             CounterClass counter = new CounterClass(10);
-            counter.ThresholdReached = HandlerThresholdReached;
+            counter.ThresholdReached += HandlerThresholdReached;
 
             while (Console.ReadKey(false).KeyChar == 'u')
             {
@@ -23,6 +23,7 @@ namespace EventExample2
         private static void HandlerThresholdReached(object sender, EventArgs e)
         {
             Console.WriteLine("Threshold reached.");
+            Console.ReadKey();
             Environment.Exit(0);
         }
     }
@@ -32,9 +33,9 @@ namespace EventExample2
         private int threshold;
         private int counter;
 
-        public EventHandler ThresholdReached;
+        public event EventHandler ThresholdReached;
 
-        public int Counter { get => counter; set => counter = value; }
+        public int Counter { get { return counter; } set { counter = value; } }
 
         public CounterClass(int t)
         {
@@ -46,7 +47,8 @@ namespace EventExample2
         {
             if (Counter >= threshold)
             {
-                ThresholdReached?.Invoke(this, EventArgs.Empty);
+                if (ThresholdReached != null)
+                    ThresholdReached.Invoke(this, EventArgs.Empty);
             }
             Counter++;
         }

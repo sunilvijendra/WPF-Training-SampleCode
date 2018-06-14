@@ -13,14 +13,17 @@ namespace DelgateExample
         static void Main(string[] args)
         {
             DelegateExample ex = new DelegateExample();
+
             Operation op = ex.Add;
 
             int result = op.Invoke(3, 5);
             Console.WriteLine("Add Result = {0}", result);
 
             op += ex.Sub;
+            op += ex.Add;
+            op -= ex.Sub;
             result = op.Invoke(3, 5);
-            Console.WriteLine("Add Result = {0}", result);
+            Console.WriteLine("Sub Result = {0}", result);
 
             Console.ReadKey();
         }

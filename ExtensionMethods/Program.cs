@@ -9,7 +9,7 @@ namespace ExtensionMethods
 
     public static class MyExtensions
     {
-        public static int GetWordCount(this String str)
+        public static int WordCount(this String str)
         {
             return str.Split(new char[] { ' ', '.', '?' },
                              StringSplitOptions.RemoveEmptyEntries).Length;
@@ -21,7 +21,8 @@ namespace ExtensionMethods
         static void Main(string[] args)
         {
             string str = "This is a sample string.";
-            int res = str.GetWordCount();
+
+            int res = str.WordCount();
             Console.WriteLine("Wordcount = {0}", res);
             Console.ReadKey();
         }
