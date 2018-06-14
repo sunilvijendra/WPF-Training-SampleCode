@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:DemoUserControls"
              mc:Ignorable="d" Height="84.083" Width="555.363">
     <Grid>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="19,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="txtFirstName" HorizontalAlignment="Left" Height="23" Margin="19,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content=" First Name&#xD;&#xA;" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="27" Width="74"/>
         <Label Content="Last Name&#xD;&#xA;" HorizontalAlignment="Left" Margin="153,11,0,0" VerticalAlignment="Top" Height="26"/>
         <GroupBox Header="Employee Status" HorizontalAlignment="Left" Height="55" Margin="292,13,0,0" VerticalAlignment="Top" Width="253">
@@ -15,7 +15,7 @@
                 <RadioButton Content="Ex-Employee" Margin="132,10,10,0"/>
             </Grid>
         </GroupBox>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="157,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="txtLastName" HorizontalAlignment="Left" Height="23" Margin="157,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </UserControl>

@@ -7,12 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="366.956" Width="724.827">
     <Grid>
-        <ListBox Margin="0,0,10,65" >
+        <ListBox Name="lbEmployees" Margin="0,0,10,65" >
             <local:NewUserInfo HorizontalAlignment="Center" Height="75" Width="657"/>
             <local:NewUserInfo HorizontalAlignment="Center" Height="75" Width="657"/>
             <local:NewUserInfo HorizontalAlignment="Center" Height="75" Width="657"/>
             <local:NewUserInfo HorizontalAlignment="Center" Height="75" Width="657"/>
             <local:NewUserInfo HorizontalAlignment="Center" Height="75" Width="657"/>
+            <local:NewUserInfo/>
         </ListBox>
         <Button Content="Add Employees" HorizontalAlignment="Left" Margin="231,294,0,0" VerticalAlignment="Top" Width="91" Click="Button_Click">
             <Button.ToolTip>
@@ -21,7 +22,7 @@
                 </ToolTip>
             </Button.ToolTip>
         </Button>
-        <Button Content="Clear" HorizontalAlignment="Left" Margin="359,294,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.929,0.239">
+        <Button Content="Clear" HorizontalAlignment="Left" Margin="359,294,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.929,0.239" Click="Button_Click_1">
             <Button.ToolTip>
                 <ToolTip>
                     Clear Info

@@ -13,7 +13,6 @@ namespace LayoutSampleDemo
 
         public Product()
         {
-
         }
 
         public Product(string _category, string _name)

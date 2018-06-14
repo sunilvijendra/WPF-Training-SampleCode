@@ -23,7 +23,45 @@ namespace LayoutSampleDemo
         public MainWindow()
         {
             InitializeComponent();
+
+            List<string> myProducts = new List<string>() { "iPhone", "Redmi", "Sony TV" };
+
+            List<ComboBoxItem> comboBoxItems = new List<ComboBoxItem>();
+            for (int i = 0; i < myProducts.Count; i++)
+            {
+                string cat = GetCategory(myProducts[i]);
+                ComboBoxItem cb = new ComboBoxItem();
+                cb.Content = cat;
+
+                int cnt = comboBoxItems.Count(x => (string) x.Content == cat);
+ 
+                if (cnt == 0)
+                {
+                    cb.IsEnabled = false;
+                    cb.FontWeight = FontWeights.Bold;
+                    comboBoxItems.Add(cb);
+                    cmbProducts.Items.Add(cb);
+                }
+
+                cb = new ComboBoxItem();
+                cb.Content = myProducts[i];
+                comboBoxItems.Add(cb);
+                cmbProducts.Items.Add(cb);
+            }
+
         }
 
+        private string GetCategory(string p)
+        {
+            if (p.Equals("iPhone") || p.Equals("Redmi"))
+                return "Mobiles";
+            return "Television";
+           
+        }
+
+        private void cmbProducts_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

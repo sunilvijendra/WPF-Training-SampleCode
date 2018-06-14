@@ -10,28 +10,14 @@
     <Window.Resources>
         <local:MyProducts x:Key="MyProductList"></local:MyProducts>
     </Window.Resources>
-    
+
     <Grid>
-        <ComboBox Name="cmbProducts" Margin="156,29,109,258" ItemsSource="{Binding Source={StaticResource MyProductList}, Path=CategoryAndProducts}">
-            <ComboBox.Resources>
-                <local:ProductCategoryConverter x:Key="categoryConverter"></local:ProductCategoryConverter>
-            </ComboBox.Resources>
-            
-            <ComboBox.ItemContainerStyle>
-                <Style TargetType="ComboBoxItem">
-                    <Style.Triggers>
-                        <DataTrigger Binding="{Binding Path=Content,
-                                                       RelativeSource={RelativeSource Self},
-                                                       Converter={StaticResource categoryConverter}, 
-                                                       ConverterParameter={StaticResource MyProductList}}"
-                                     Value="true">
-                            <Setter Property="FontWeight" Value="Bold"></Setter>
-                            <Setter Property="IsEnabled" Value="False"></Setter>
-                        </DataTrigger>
-                    </Style.Triggers>
-                </Style>
-            </ComboBox.ItemContainerStyle>
-            
+        
+        <ComboBox>
+            <ComboBox.Resources></ComboBox.Resources>
+        </ComboBox>
+        <ComboBox Name="cmbProducts" Margin="156,29,109,258"  Loaded="cmbProducts_Loaded">
+ 
         </ComboBox>
         <Label Content="Select Product" HorizontalAlignment="Left" Margin="44,29,0,0" VerticalAlignment="Top"/>
     </Grid>
